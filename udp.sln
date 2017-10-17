@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "c", "c\c.vcproj", "{54BAAAB7-919A-44B2-BFED-7C3A821D7B50}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "s", "s\s.vcproj", "{C9FBCF35-A55E-45A6-B62A-C165097FF213}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54BAAAB7-919A-44B2-BFED-7C3A821D7B50}.Debug|Win32.ActiveCfg = Debug|Win32
+		{54BAAAB7-919A-44B2-BFED-7C3A821D7B50}.Debug|Win32.Build.0 = Debug|Win32
+		{54BAAAB7-919A-44B2-BFED-7C3A821D7B50}.Release|Win32.ActiveCfg = Release|Win32
+		{54BAAAB7-919A-44B2-BFED-7C3A821D7B50}.Release|Win32.Build.0 = Release|Win32
+		{C9FBCF35-A55E-45A6-B62A-C165097FF213}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C9FBCF35-A55E-45A6-B62A-C165097FF213}.Debug|Win32.Build.0 = Debug|Win32
+		{C9FBCF35-A55E-45A6-B62A-C165097FF213}.Release|Win32.ActiveCfg = Release|Win32
+		{C9FBCF35-A55E-45A6-B62A-C165097FF213}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
