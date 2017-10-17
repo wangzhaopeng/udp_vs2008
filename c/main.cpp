@@ -34,6 +34,15 @@ int main(int argc, char* argv[])
 	DWORD dwBytesReturned = 0;
 	WSAIoctl(sockClient, SIO_UDP_CONNRESET, &bNewBehavior, sizeof bNewBehavior, NULL, 0, &dwBytesReturned, NULL, NULL);
 
+
+	////…Ë÷√socket≥¨ ±
+	int nNetTimeout= 1000;//ms
+	if (SOCKET_ERROR ==  setsockopt(sockClient,SOL_SOCKET, SO_RCVTIMEO, (char *)&nNetTimeout,sizeof(int))) 
+	{ 
+		printf("Set Ser_RecTIMEO error !\r\n"); 
+	} 
+
+
 	int idx = 0;
 	while(1){
 		printf("idx %d\n",idx ++);
