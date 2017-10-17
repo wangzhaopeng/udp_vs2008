@@ -26,7 +26,9 @@ int main(int argc, char* argv[])
 	addr.sin_port = htons(PORT);  
 	addr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");  
 
+	int idx = 0;
 	while(1){
+		printf("idx %d\n",idx ++);
 		char buf[] = "client test!";  
 		//发送数据  
 		int dwSent = sendto(sockClient, buf, strlen(buf), 0, (SOCKADDR *)&addr, sizeof(SOCKADDR));  
@@ -43,8 +45,12 @@ int main(int argc, char* argv[])
 		sockaddr_in addrSever = { 0 };  
 		int nServerAddrLen=sizeof(sockaddr_in);  
 		// 接收数据  
-		int dwRecv = recvfrom(sockClient, recvBuf, 512, 0, (SOCKADDR *)&addrSever,&nServerAddrLen);  
-		printf("Recv msg from server : %s\n", recvBuf);  
+		int dwRecv = recvfrom(sockClient, recvBuf, 512, 0, (SOCKADDR *)&addrSever,&nServerAddrLen);
+		if (dwRecv>0)
+		{
+			printf("Recv msg from server : %s\n", recvBuf);  
+		}
+		Sleep(10);
 	}
 
 	//关闭SOCKET连接  
