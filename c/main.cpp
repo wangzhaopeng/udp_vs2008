@@ -3,6 +3,9 @@
 #include <Windows.h>  
 
 #pragma comment(lib,"ws2_32.lib")  
+
+#define SIO_UDP_CONNRESET _WSAIOW(IOC_VENDOR, 12)
+
 #define  PORT 6000  
 int main(int argc, char* argv[])  
 {  
@@ -25,6 +28,11 @@ int main(int argc, char* argv[])
 	addr.sin_family = AF_INET;  
 	addr.sin_port = htons(PORT);  
 	addr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");  
+
+	////½â¾örecvfrom 10054´íÎó
+	BOOL bNewBehavior = FALSE;
+	DWORD dwBytesReturned = 0;
+	WSAIoctl(sockClient, SIO_UDP_CONNRESET, &bNewBehavior, sizeof bNewBehavior, NULL, 0, &dwBytesReturned, NULL, NULL);
 
 	int idx = 0;
 	while(1){
@@ -49,6 +57,11 @@ int main(int argc, char* argv[])
 		if (dwRecv>0)
 		{
 			printf("Recv msg from server : %s\n", recvBuf);  
+		}else
+		{
+			int err;
+			err = WSAGetLastError();
+			printf("err %d\n",err);
 		}
 		Sleep(10);
 	}
