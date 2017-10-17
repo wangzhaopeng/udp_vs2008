@@ -39,7 +39,9 @@ modules.builtin
 /Debug/*.ilk
 /Debug/*.pdb
 /c/Debug
+/c/*.vcproj.*
 /s/Debug
+/s/*.vcproj.*
 
 #
 # Top-level generic files
